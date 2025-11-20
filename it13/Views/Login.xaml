@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:RentalManagementSystem.ViewModels"
+             x:Class="IT13.Views.LoginPage"
+             BackgroundColor="{StaticResource BackgroundDark}">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="40" VerticalOptions="Center">
+
+            <Image Source="logo.png" HeightRequest="120" HorizontalOptions="Center" />
+            <Label Text="Rental Management System"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource LightBlue}" />
+
+            <Frame>
+                <VerticalStackLayout Spacing="20">
+
+                    <Entry Placeholder="Username" Text="{Binding Username}" />
+                    <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True" />
+
+                    <Picker Title="Select Role"
+                            SelectedItem="{Binding SelectedRole}"
+                            ItemsSource="{Binding Roles}"
+                            TextColor="White"
+                            TitleColor="{StaticResource LightBlue}">
+                        <Picker.Style>
+                            <Style TargetType="Picker">
+                                <Setter Property="BackgroundColor" Value="#2a4b8c" />
+                            </Style>
+                        </Picker.Style>
+                    </Picker>
+
+                    <Button Text="LOGIN"
+                            Command="{Binding LoginCommand}"
+                            HeightRequest="55" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="Demo: Any username + password: 1234"
+                   FontSize="12"
+                   TextColor="{StaticResource TextSecondary}"
+                   HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

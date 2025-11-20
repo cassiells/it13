@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IT13.Views.MainPage"
+             Title="Dashboard"
+             BackgroundColor="{StaticResource BackgroundDark}">
+
+    <Grid Padding="30">
+        <VerticalStackLayout Spacing="30">
+
+            <Label Text="Welcome to Dashboard"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource LightBlue}" />
+
+            <Label Text="{Binding WelcomeMessage}"
+                   FontSize="20"
+                   TextColor="{StaticResource TextSecondary}" />
+
+            <Frame>
+                <Grid ColumnDefinitions="*,*,*,*">
+                    <Frame BackgroundColor="{StaticResource Primary}" Margin="10">
+                        <VerticalStackLayout>
+                            <Label Text="12" FontSize="40" HorizontalOptions="Center" />
+                            <Label Text="Active Properties" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame BackgroundColor="#0066cc" Margin="10" Grid.Column="1">
+                        <VerticalStackLayout>
+                            <Label Text="48" FontSize="40" HorizontalOptions="Center" />
+                            <Label Text="Tenants" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame BackgroundColor="#0052a3" Margin="10" Grid.Column="2">
+                        <VerticalStackLayout>
+                            <Label Text="₦2.4M" FontSize="40" HorizontalOptions="Center" />
+                            <Label Text="This Month Rent" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame BackgroundColor="#004080" Margin="10" Grid.Column="3">
+                        <VerticalStackLayout>
+                            <Label Text="7" FontSize="40" HorizontalOptions="Center" />
+                            <Label Text="Pending Requests" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </Grid>
+            </Frame>
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
